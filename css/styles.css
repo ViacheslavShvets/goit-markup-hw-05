@@ -40,6 +40,16 @@ html {
 	box-sizing: border-box;
 }
 
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
 /* reeset */
 h1,
 h2,
@@ -79,7 +89,7 @@ address {
 	margin: 0;
 }
 /* часткове скиданя властивостей списків */
-.link {
+a {
 	text-decoration: none;
 }
 .main-nav {
@@ -123,25 +133,44 @@ address {
 	display: flex;
 	align-items: center;
 }
-.header-link::before .header-link::after {
+/* .header-link::before .header-link::after {
 	content: "";
 	display: inline-block;
 	width: 24px;
 	height: 24px;
 	color: #188ce8;
+} */
+.header-list .link .current {
+	color: var(--accent-cl);
+}
+
+.header-list .link .current::after {
+	position: absolute;
+	display: block;
+	content: "";
+	bottom: -1px;
+	left: 0;
+	height: 4px;
+	width: 100%;
+	background-color: var(--accent-color);
+	border-radius: 2px;
 }
 
 /* (а) посилання в блоці нав */
-.header-link {
+.link {
+	display: block;
 	padding-top: 32px;
 	padding-bottom: 32px;
+
+	color: var(--dark-txt-cl);
 
 	font-style: normal;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 1.33;
 	letter-spacing: 0.02em;
-	color: var(--dark-txt-cl);
+
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
