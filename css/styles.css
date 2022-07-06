@@ -15,9 +15,11 @@
 	--dark-bgr-cl: #2f303a;
 	--light-bgr-cl: #ffffff;
 	--blue-but-cl: #188ce8;
-	/* шконки соц мереж */
-	--bg-color-icon: #2196f3;
-	--color-icon: #ffffff;
+	/* колір бордера */
+	--color-border-porfolio: #eeeeee;
+	/* колр іконок в ховері, фокусі */
+	--background-color-icons: #2196f3;
+	--color-icons: #ffffff;
 
 	/* змінні в сітці в портфоліо */
 	--csrd-set-gap: 30px;
@@ -38,16 +40,6 @@ body {
 
 html {
 	box-sizing: border-box;
-}
-
-*,
-*::after,
-*::before {
-	box-sizing: inherit;
-}
-
-.no-scroll {
-	overflow: hidden;
 }
 
 /* reeset */
@@ -96,10 +88,6 @@ a {
 	display: flex;
 }
 
-/* підсвітка кнопки активної сторінки */
-.current :active {
-	color: #2196f3;
-}
 /* хедер початок */
 /* логотип в хедері */
 .header-logo {
@@ -126,25 +114,34 @@ a {
 	display: flex;
 	margin-left: 93px;
 }
-.header-list-cont {
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 .header-nav {
 	display: flex;
 	align-items: center;
 }
-/* .header-link::before .header-link::after {
-	content: "";
-	display: inline-block;
-	width: 24px;
-	height: 24px;
-	color: #188ce8;
-} */
-.header-list .link .current {
-	color: var(--accent-cl);
+
+/* (а) посилання в блоці нав */
+.header-link {
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.33;
+	letter-spacing: 0.02em;
+	color: var(--dark-txt-cl);
 }
 
-.header-list .link .current::after {
+.header-link:hover,
+.header-link:focus {
+	color: var(--accent-txt-cl);
+}
+/* підсвітка кнопки активної сторінки */
+.site-nav .link.current {
+	color: var(--accent-color);
+}
+/* .header-list-item .link.current::after {
 	position: absolute;
 	display: block;
 	content: "";
@@ -153,31 +150,15 @@ a {
 	height: 4px;
 	width: 100%;
 	background-color: var(--accent-color);
-	border-radius: 2px;
+	border-radius: 2px; */
+
+.pseudo {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #2196f3;
 }
-
-/* (а) посилання в блоці нав */
-.link {
-	display: block;
-	padding-top: 32px;
-	padding-bottom: 32px;
-
-	color: var(--dark-txt-cl);
-
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 1.33;
-	letter-spacing: 0.02em;
-
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-link:hover,
-.header-link:focus {
-	color: var(--accent-txt-cl);
-}
-
 /* блок контакти в шапці */
 .header-list-cont {
 	display: flex;
@@ -211,7 +192,6 @@ a {
 
 /* сеrція герой */
 .hero {
-	background-color: #2f303a;
 	text-align: center;
 	padding: 200px 0;
 	max-width: 1600px;
@@ -328,7 +308,7 @@ a {
 	line-height: 1.14;
 	text-transform: uppercase;
 
-	margin-bottom: 10px;
+	-bottom: 10px;
 }
 
 .upertitle {
@@ -420,8 +400,8 @@ a {
 }
 .social-link-icon:hover,
 .social-link-icon:focus {
-	background-color: var(--bg-color-icon);
-	color: var(--color-icon);
+	background-color: var(--background-color-icons);
+	color: var(--color-icons);
 }
 
 /* постійні кліенти */
@@ -461,6 +441,7 @@ a {
 /* портфоліо початок */
 .portfolio-header {
 	border: 1px solid #ececec;
+	/* border-bottom: 1px ; */
 }
 
 /* кнопки в портфоліо */
@@ -484,7 +465,7 @@ a {
 	background-color: var(--gray-bgr-cl);
 	border-radius: 4px;
 }
-.btn-filter:not(:first-child) {
+.btn-filter:not(first-child) {
 	margin-right: 8px;
 }
 .btn-filter:hover,
@@ -497,10 +478,6 @@ a {
 	color: var(--primery-white-color);
 	background-color: var(--accent-color);
 }
-
-.project-cards-link {
-	display: block;
-}
 .cards {
 	display: flex;
 	flex-wrap: wrap;
@@ -509,19 +486,20 @@ a {
 .project-list {
 	flex-basis: calc((100% - var(--csrd-set-gap) * 3) / 3);
 	margin: var(--csrd-set-marg);
+	/* border: 1px solid var(--color-border-porfolio); */
 }
 .project-cards-lin {
 	display: flex;
 }
 
-.project-cards-link:hover,
-.project-cards-link:focus {
+.project-list:hover,
+.project-list:focus {
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .cards-title {
 	padding: 20px 24px;
-	border: 1px solid #eeeeee;
+	border: 1px solid var(--color-border-porfolio);
 	border-top: none;
 }
 
@@ -597,7 +575,6 @@ a {
 }
 
 /* section social footer */
-
 .footer-social-thumb {
 	margin-left: 70px;
 }
@@ -631,200 +608,8 @@ a {
 }
 .footer-link-icon:hover,
 .footer-link-icon:focus {
-	background-color: var(--bg-color-icon);
-	color: var(--color-icon);
+	background-color: var(--background-color-icons);
+	color: var(--color-icons);
 }
-/* модалка */
-.backdrop {
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	background: rgba(0, 0, 0, 0.2);
-
-	opacity: 1;
-	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal {
-	padding: 40px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	min-width: 528px;
-	min-height: 581px;
-	background: var(--accent-text-color);
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-	border-radius: 4px;
-	/* transform: translate(-50%, -50%);*/
-	transform: translate(-50%, -50%) scale(1);
-	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.button-close {
-	position: absolute;
-	top: 8px;
-	right: 8px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 30px;
-	height: 30px;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 50%;
-	background: transparent;
-	cursor: pointer;
-}
-.backdrop.is-hidden {
-	opacity: 0;
-	pointer-events: none;
-}
-
-.backdrop.is-hidden .modal {
-	transform: translate(-50%, -50%) scale(0.9);
-}
-
-.feedtext {
-	margin-bottom: 12px;
-
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 1.15;
-	text-align: center;
-	color: var(--primary-text-color);
-}
-.modal-label {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 10px;
-
-	font-size: 12px;
-	line-height: 14px;
-	letter-spacing: 0.01em;
-	color: var(--secondary-text-color);
-}
-
-.modal-label textarea {
-	width: 100%;
-	min-height: 120px;
-	resize: none;
-	margin-top: 4px;
-	border: 1px solid rgba(33, 33, 33, 0.2);
-	border-radius: 4px;
-	padding: 12px 16px;
-	margin-bottom: 20px;
-}
-
-.modal-label textarea::placeholder {
-	font-size: 12px;
-	line-height: 1.17px;
-	letter-spacing: 0.01em;
-	color: rgba(117, 117, 117, 0.5);
-}
-
-.terms {
-	font-family: inherit;
-	line-height: 1.71;
-	color: var(--secondary-text-color);
-
-	color: var(--accent-color);
-	text-decoration: underline;
-}
-
-.submit-modal {
-	min-width: 200px;
-	height: 100%;
-	padding: 10px 55px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
-
-	display: flex;
-	align-items: center;
-	text-align: center;
-
-	font-family: inherit;
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 1.88;
-	letter-spacing: 0.06em;
-	color: var(--accent-text-color);
-	background: var(--accent-color);
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-	border-radius: 4px;
-	border-color: transparent;
-}
-
-.modal-accepting {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	font-family: inherit;
-	line-height: 1.71;
-	color: var(--secondary-text-color);
-}
-
-.checkbox-accepting {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	white-space: nowrap;
-	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-}
-
-.checkbox-accepting:checked + .check {
-	background-color: var(--accent-color);
-	border-color: #2196f3;
-}
-
-.check {
-	position: absolute;
-	left: 51.5px;
-	background-origin: border-box;
-}
-
-.box {
-	display: inline-block;
-	width: 16px;
-	height: 15px;
-	border: 2px solid var(--primary-text-color);
-	margin-right: 8px;
-}
-
-.modal-input {
-	width: 100%;
-	min-height: 40px;
-	border: 1px solid rgba(33, 33, 33, 0.2);
-
-	border-radius: 4px;
-	margin-top: 4px;
-	padding: 0;
-}
-.modal-icon {
-	position: absolute;
-	top: 15px;
-	left: 12px;
-}
-.inputsvg {
-	position: relative;
-	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.inputsvg:focus-within > .modal-icon {
-	fill: var(--accent-color);
-}
-
-.inputsvg .modal-input:focus {
-	border: 1px solid #2196f3;
-}
-/* модалка кінець */
 
 /* footer end */
