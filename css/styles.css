@@ -134,12 +134,14 @@ a {
 	letter-spacing: 0.02em;
 	color: var(--dark-txt-cl);
 
-	transition: color 250ms var(--timing-f);
+	transition: color 250ms var(--timing-variable);
 }
 
 .header-link:hover,
 .header-link:focus {
 	color: var(--accent-txt-cl);
+
+	transition: color 250ms var(--timing-variable);
 }
 /* підсвітка кнопки активної сторінки */
 
@@ -148,7 +150,7 @@ a {
 	color: var(--accent-txt-cl);
 }
 
-.current::before {
+.current::after {
 	content: "";
 	position: absolute;
 	bottom: 0;
@@ -177,7 +179,7 @@ a {
 	letter-spacing: 0.02em;
 	color: var(--gray-txt-cl);
 
-	transition: color 250ms var(--timing-f);
+	transition: color 250ms var(--timing-variable);
 }
 
 .header-cont:hover,
@@ -427,8 +429,6 @@ a {
 	height: 44px;
 	border-radius: 50%;
 	color: #afb1b8;
-
-	transition: background-color 2500ms var(--timing-f), color 250ms var(--timing-f);
 }
 .social-icon {
 	fill: currentColor;
@@ -437,6 +437,8 @@ a {
 .social-link-icon:focus {
 	background-color: var(--background-color-icons);
 	color: var(--color-icons);
+
+	transition: background-color 250ms var(--timing-variable), color 250ms var(--timing-variable);
 }
 
 /* постійні кліенти */
@@ -690,6 +692,8 @@ a {
 .footer-link-icon:focus {
 	background-color: var(--background-color-icons);
 	color: var(--color-icons);
+
+	transition: background-color 250ms var(--timing-variable), color 250ms var(--timing-variable);
 }
 
 /* footer end */
@@ -705,8 +709,6 @@ a {
 	height: 100%;
 	background: rgba(0, 0, 0, 0.2);
 	z-index: 20;
-
-	transition: visibility 250ms var(--timing-variable), opacity 250ms var(--timing-variable);
 }
 
 .modal {
