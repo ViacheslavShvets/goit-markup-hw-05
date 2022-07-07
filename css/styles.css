@@ -428,7 +428,7 @@ a {
 	border-radius: 50%;
 	color: #afb1b8;
 
-	transition: background-color 250ms var(--timing-f), color 250ms var(--timing-f);
+	transition: background-color 2500ms var(--timing-f), color 250ms var(--timing-f);
 }
 .social-icon {
 	fill: currentColor;
