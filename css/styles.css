@@ -332,33 +332,28 @@ a {
 .services {
 	padding-top: 0;
 }
+
+.services-item {
+	position: relative;
+}
+
 .services-item:not(:last-child) {
 	margin-right: 30px;
 }
 
-.services-title {
-	position: relative;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-}
-
 .description-services {
+	bottom: 0%;
 	position: absolute;
-	margin-bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
-
-	padding-bottom: 27px;
-	padding-top: 27px;
-
-	font-size: 14px;
-	line-height: 1.14;
-	text-align: center;
-	letter-spacing: 0.03em;
+	height: 70px;
+	font-weight: 700;
+	line-height: 1.14px;
 	text-transform: uppercase;
-
 	color: #ffffff;
-	background: rgba(47, 48, 58, 0.8);
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* секція наша команда  */
@@ -368,6 +363,7 @@ a {
 
 .flex-group {
 	display: flex;
+	align-items: baseline;
 }
 
 .group-title {
@@ -466,7 +462,7 @@ a {
 	border-radius: 4px;
 	color: #afb1b8;
 
-	transition: background-color 250ms var(--timing-variable), color 250ms var(--timing-variable);
+	transition: border-color 250ms var(--timing-variable), color 250ms var(--timing-variable);
 }
 .clients-icon {
 	fill: currentColor;
@@ -504,7 +500,8 @@ a {
 	background-color: var(--gray-bgr-cl);
 	border-radius: 4px;
 
-	transition: background-color 250ms var(--timing-variable), color 250ms var(--timing-variable);
+	transition: background-color 250ms var(--timing-variable), color 250ms var(--timing-variable),
+		box-shadow 250ms var(--timing-variable);
 }
 .btn-filter:not(first-child) {
 	margin-right: 8px;
@@ -594,7 +591,8 @@ a {
 	color: var(--light-txt-cl);
 	background: rgba(33, 150, 243, 0.9);
 }
-.project-list:hover .cover-image {
+.project-cards-link:hover .cover-image,
+.project-cards-link:focus .cover-image {
 	transform: translateY(0%);
 }
 
@@ -641,8 +639,10 @@ a {
 
 .footer-addr {
 	line-height: 1.71;
-	color: var(--light-txt-cl);
 	letter-spacing: normal;
+	color: var(--light-txt-cl);
+
+	transition: color 250ms var(--timing-variable);
 }
 
 .addr {
@@ -690,7 +690,7 @@ a {
 	color: var(--light-txt-cl);
 	background-color: rgba(255, 255, 255, 0.1);
 
-	transition: background-color 250ms var(--timing-variable), color 250ms var(--timing-variable);
+	transition: background-color 250ms var(--timing-variable);
 }
 .footer-social-link:not(:last-child) {
 	margin-right: 10px;
@@ -714,6 +714,8 @@ a {
 	height: 100%;
 	background: rgba(0, 0, 0, 0.2);
 	z-index: 20;
+
+	transition: opacity 250ms var(--timing-variable), visibility 250ms var(--timing-variable);
 }
 
 .modal {
